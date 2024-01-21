@@ -10,7 +10,7 @@ const captchaLogic = async (res, url) => {
   const address=url
   
   const browser = await puppeteer.launch({
-    headless: false,
+    headless: true,
     args: [
       "--disable-setuid-sandbox",
       "--no-sandbox",
