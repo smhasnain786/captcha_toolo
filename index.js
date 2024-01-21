@@ -4,11 +4,9 @@ const cors = require('cors')
 const path = require('path');
 const app = express();
 // app.use('/images', express.static(path.join(__dirname, 'uploads1')));
-const corsOptions = {
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-};
-app.use(cors(corsOptions));
+app.use(cors({
+  origin: '*',
+}));
 const PORT = process.env.PORT || 4000;
 console.log(path.join(__dirname, ''));
 app.get("/urls/", (req, res) => {
