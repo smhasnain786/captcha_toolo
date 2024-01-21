@@ -10,7 +10,7 @@ const captchaLogic = async (res, url) => {
   const address=url
   
   const browser = await puppeteer.launch({
-    headless: "new",
+    headless: false,
     args: [
       "--disable-setuid-sandbox",
       "--no-sandbox",
@@ -50,8 +50,7 @@ const captchaLogic = async (res, url) => {
     await textButton.click()
     await page.waitForSelector('.QeOavc')
     let element = await page.waitForSelector('[dir="ltr"]')
-    // const values = await page.evaluate(el => el.querySelector('[dir="ltr"]').innerHTMl, element)
-    // console.log((values));
+   
     const text = await page.evaluate(el => {
       const spanElement = el.querySelector('div.QeOavc > [dir="ltr"]');
       b2 = true
