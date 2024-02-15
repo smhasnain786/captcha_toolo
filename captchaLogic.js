@@ -38,7 +38,7 @@ const captchaLogic = async (res, url) => {
     await button.click();
     console.log('Button clicked2');
     console.log(url);
-    await page.$eval('.cB9M7',( el , address )=> el.value = address , address);
+    await page.$eval('#inputBox',( el , address )=> el.value = address , address);
     setTimeout(async () => {
       const submit = await page.waitForSelector('div.Qwbd3');
       console.log('----------->', submit);
